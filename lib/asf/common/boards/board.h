@@ -50,6 +50,8 @@
 #ifndef _BOARD_H_
 #define _BOARD_H_
 
+#define BOARD USER_BOARD
+
 /**
  * \defgroup group_common_boards Generic board support
  *
