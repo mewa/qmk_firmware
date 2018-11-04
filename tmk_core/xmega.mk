@@ -22,32 +22,38 @@ COMPILEFLAGS += -fshort-enums
 
 LIB_ASF = $(LIB_PATH)/asf
 
-COMPILEFLAGS += -I$(LIB_ASF)/config
-COMPILEFLAGS += -I$(LIB_ASF)/common/boards
-COMPILEFLAGS += -I$(LIB_ASF)/common/boards/user_board
-COMPILEFLAGS += -I$(LIB_ASF)/common/services
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/clock
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/clock/xmega
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/sleepmgr
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/sleepmgr/xmega
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb/class
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device/generic
-COMPILEFLAGS += -I$(LIB_ASF)/common/services/usb/udc
-COMPILEFLAGS += -I$(LIB_ASF)/common/utils
-COMPILEFLAGS += -I$(LIB_ASF)/common/utils/interrupt
-COMPILEFLAGS += -I$(LIB_ASF)/common/utils/make
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/drivers
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/drivers/cpu
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/drivers/nvm
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/drivers/sleep
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/drivers/usb
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/utils
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/utils/assembler
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/utils/bit_handling
-COMPILEFLAGS += -I$(LIB_ASF)/xmega/utils/preprocessor
+
+
+INCLUDEFLAGS += -I$(LIB_ASF)/config
+INCLUDEFLAGS += -I$(LIB_ASF)/common/boards
+INCLUDEFLAGS += -I$(LIB_ASF)/common/boards/user_board
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/clock
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/clock/xmega
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/sleepmgr
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/sleepmgr/xmega
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device/generic
+INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/udc
+INCLUDEFLAGS += -I$(LIB_ASF)/common/utils
+INCLUDEFLAGS += -I$(LIB_ASF)/common/utils/interrupt
+INCLUDEFLAGS += -I$(LIB_ASF)/common/utils/make
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/drivers
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/drivers/cpu
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/drivers/nvm
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/drivers/sleep
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/drivers/usb
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/utils
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/utils/assembler
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/utils/bit_handling
+INCLUDEFLAGS += -I$(LIB_ASF)/xmega/utils/preprocessor
+
+COMPILEFLAGS += $(INCLUDEFLAGS)
+
+ASFLAGS += $(INCLUDEFLAGS)
 
 CFLAGS += $(COMPILEFLAGS) -std=gnu99
 CFLAGS += -fno-inline-small-functions
