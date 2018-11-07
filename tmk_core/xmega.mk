@@ -21,9 +21,11 @@ COMPILEFLAGS += -fpack-struct
 COMPILEFLAGS += -fshort-enums
 
 LIB_ASF = $(LIB_PATH)/asf
+LIB_ASFUSB = $(LIB_PATH)/asf-usb
 
 
-
+INCLUDEFLAGS += -I$(LIB_ASFUSB)
+INCLUDEFLAGS += -I$(LIB_ASFUSB)/udi
 INCLUDEFLAGS += -I$(LIB_ASF)/config
 INCLUDEFLAGS += -I$(LIB_ASF)/common/boards
 INCLUDEFLAGS += -I$(LIB_ASF)/common/boards/user_board
@@ -36,7 +38,6 @@ INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb
 INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class
 INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid
 INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device
-INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/class/hid/device/generic
 INCLUDEFLAGS += -I$(LIB_ASF)/common/services/usb/udc
 INCLUDEFLAGS += -I$(LIB_ASF)/common/utils
 INCLUDEFLAGS += -I$(LIB_ASF)/common/utils/interrupt
